@@ -1,4 +1,4 @@
-class TabnavGenerator < Rails::Generator::NamedBase
+class WidgetTabnavGenerator < Rails::Generator::NamedBase
 	attr_accessor :name
 
 	def initialize(runtime_args, runtime_options={})
@@ -20,6 +20,6 @@ class TabnavGenerator < Rails::Generator::NamedBase
 	protected
 
 	def banner
-		"Usage: #{$0} tabnav Name"
+		"Usage: #{$0} widget_tabnav Name"
 	end
 end

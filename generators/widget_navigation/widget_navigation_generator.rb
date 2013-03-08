@@ -1,4 +1,4 @@
-class NavigationGenerator < Rails::Generator::NamedBase
+class WidgetNavigationGenerator < Rails::Generator::NamedBase
 	attr_accessor :name
 
 	def initialize(runtime_args, runtime_options={})
@@ -20,6 +20,6 @@ class NavigationGenerator < Rails::Generator::NamedBase
 	protected
 
 	def banner
-		"Usage: #{$0} navigation Name"
+		"Usage: #{$0} widget_navigation Name"
 	end
 end

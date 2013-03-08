@@ -1,4 +1,4 @@
-class InstallGenerator < Rails::Generator::NamedBase
+class WidgetInstallGenerator < Rails::Generator::Base
 
 	def manifest
 		record do |m|
