@@ -58,7 +58,7 @@ module Widgets
       html << content
       html << '<small>' + close_tooltip_link(opts[:id], opts[:close_message]) + '</small>'     
       html << '</div></div>' 
-      html
+      html.html_safe
     end
   end
 end

@@ -34,6 +34,7 @@ module Widgets
         html << "<div style='width: #{percentage}%;' class='#{css_class}'></div>"
       end 
       html << "</div>" 
+      html.html_safe
     end
   end
 end

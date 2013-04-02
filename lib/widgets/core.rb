@@ -3,7 +3,7 @@ module ActionView
     module AssetTagHelper
       
       # We redefine javascript_include_tag in order to auto-magically include
-      # the widgets javascripts. If you hame more than one javascript_include_tag
+      # the widgets javascripts. If you have more than one javascript_include_tag
       # call, the widgets javascripts gets included only once.
       def javascript_include_tag_with_widgets(*sources)
         unless @__widgets_has_already_included_its_js

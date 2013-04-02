@@ -3,7 +3,7 @@ module Widgets
 
     def navigation name, opts={}
       partial_template = opts[:partial] || "widgets/#{name}_navigation"
-      html = capture { render :partial => partial_template }
+      html = capture {render :partial => partial_template }
       return html
     end
 
@@ -12,10 +12,10 @@ module Widgets
       raise ArgumentError, "Missing block in render_navigation call" unless block_given?
       @_navigation = Navigation.new(name, opts)
       instance_eval(&proc)
-      concat @_navigation.render_css('navigation') if @_navigation.generate_css?
+      concat @_navigation.render_css('navigation').html_safe if @_navigation.generate_css?
       concat tag('div',@_navigation.html ,true)
       render_navigation_items
-      concat '</div>'
+      concat '</div>'.html_safe
       nil
     end
 
@@ -30,7 +30,7 @@ module Widgets
     def render_navigation_items
       return if @_navigation.items.empty?
 
-      concat "<ul>\n"
+      concat "<ul>\n".html_safe
       @_navigation.items.each_with_index do |item,index|
         if item.disabled?
           item.html[:class] = 'disabled'
@@ -38,16 +38,16 @@ module Widgets
           item.html[:class] = 'active'
         end
 
-        concat '<li>'
+        concat "<li>".html_safe
         if item.disabled?
           concat content_tag('span', item.name, item.html)
         else
           concat link_to(item.name, item.link, item.html)
         end
         concat @_navigation.separator unless index == @_navigation.items.size - 1
-        concat "</li>\n"
+        concat "</li>\n".html_safe
       end
-      concat '</ul>'
+      concat "</ul>".html_safe
     end
   end
 end
