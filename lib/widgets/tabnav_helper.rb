@@ -23,10 +23,10 @@ module Widgets
         html << tag('div', options, true)
         html << capture(&block)
         html << '</div>'
-        concat html
+        concat html.html_safe
         nil # avoid duplication if called with <%= %>
       else
-        return html
+        return html.html_safe
       end
     end
 
@@ -41,7 +41,7 @@ module Widgets
       @_tabnav = Tabnav.new(name, opts)
 
       instance_eval(&proc)
-      concat @_tabnav.render_css('tabnav') if @_tabnav.generate_css?
+      concat @_tabnav.render_css('tabnav').html_safe if @_tabnav.generate_css?
       concat tag('div',@_tabnav.html ,true)
       @_tabnav.sort! if opts[:sort] == true
       render_tabnav_tabs
@@ -119,13 +119,14 @@ module Widgets
       rescue
         inner_html = "Loading..."
       end
-      return <<-JAVASCRIPT
+      js =<<-JAVASCRIPT
           var element = $('#{@_tabnav.html[:id]}_content');
           var h = element.getHeight() - 38;
           element.innerHTML='#{escape_javascript(inner_html)}';
           element.setStyle({height: ''+h+'px'});
           //element.morph('height:'+h+'px');
       JAVASCRIPT
+      return js.html_safe
     end
   end
 end
