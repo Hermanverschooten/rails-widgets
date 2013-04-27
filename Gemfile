@@ -6,5 +6,6 @@ gemspec
 gem 'rake'
 gem 'rdoc'
 gem 'activerecord'
-gem 'actionpack'
-gem 'activesupport'
+gem 'activesupport', '>= 3.0'
+gem 'actionpack', '3.2.13'
+gem 'sprockets'
