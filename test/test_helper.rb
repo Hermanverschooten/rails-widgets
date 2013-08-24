@@ -5,7 +5,7 @@ require 'rubygems'
 require 'test/unit'
 require 'active_record'
 require 'action_controller'
-require 'action_controller/test_process'
+# require 'action_controller/test_process'
 require 'rails-widgets'
 # gem install redgreen for colored test output
 begin require 'redgreen'; rescue LoadError; end
