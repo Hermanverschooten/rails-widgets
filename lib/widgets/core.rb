@@ -1,11 +1,6 @@
-# require 'active_support'
-# require 'action_pack'
-# require 'sprockets'
-# require 'sprockets/helpers'
-# require 'action_view'
-module Sprockets
+module ActionView
   module Helpers
-    module RailsHelper
+    module AssetTagHelper
       
       # We redefine javascript_include_tag in order to auto-magically include
       # the widgets javascripts. If you have more than one javascript_include_tag
