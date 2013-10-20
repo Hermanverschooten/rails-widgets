@@ -1,4 +1,3 @@
 module RailsWidgets
-    VERSION = "0.0.3"
-  end
+  VERSION = "0.0.3"
 end
