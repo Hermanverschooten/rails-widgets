@@ -5,7 +5,7 @@ require 'widgets/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "rails-widgets"
-  gem.version       = Rails::Widgets::VERSION
+  gem.version       = RailsWidgets::VERSION
   gem.authors       = ["Herman verschooten"]
   gem.email         = ["Herman@verschooten.net"]
   gem.description   = %q{Rails Widgets Gem}

@@ -1,5 +1,4 @@
-module Rails
-  module Widgets
-    VERSION = "0.0.2"
+module RailsWidgets
+    VERSION = "0.0.3"
   end
 end
